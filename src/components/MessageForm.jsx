@@ -14,7 +14,7 @@ const MessageForm = (props) => {
   };
   const handleChange = (event) => {
     setValue(event.target.value);
-    isTyping(value, chatId);
+    isTyping(props, chatId);
   };
 
   const handleUpload = (event) => {
@@ -39,7 +39,7 @@ const MessageForm = (props) => {
         multiple={false}
         id="upload-button"
         style={{ display: "none" }}
-        onChange={handleUpload}
+        onChange={handleUpload.bind(this)}
       />
       <button type="submit" className="send-button">
         <SendOutlined className="send-icon" />
